@@ -1,0 +1,41 @@
+<form [formGroup]="productForm" (ngSubmit)="onAddProduct()">
+    <mat-form-field appearance="fill">
+        <mat-label for="name">Name</mat-label>
+        <input type="text" matInput formControlName="productName">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label for="productDetails">Details</mat-label>
+        <textarea type="text" matInput formControlName="productDetails"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label for="image">Image</mat-label>
+        <input type="text" matInput formControlName="image">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label for="canReturn">CanReturn</mat-label>
+        <mat-select type="text" matInput formControlName="canReturn">
+            <mat-option value="true">true</mat-option>
+            <mat-option value="false">false</mat-option>
+        </mat-select>
+    </mat-form-field>
+   
+    <mat-form-field appearance="fill">
+        <mat-label for="price">Price</mat-label>
+        <input type="text" matInput formControlName="price">
+    </mat-form-field>
+
+     <mat-form-field appearance="fill">
+        <mat-label for="pStatus">Status</mat-label>
+        <mat-select type="text" matInput formControlName="pStatus">
+            <mat-option value="Delivered">Delivered</mat-option>
+            <mat-option value="Dispatch">Dispatch</mat-option>
+             <mat-option value="InProgress">InProgress</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" *ngIf="!isInEditMode">Add Product</button>
+    <button mat-raised-button color="primary" type="button" (click)="onUpdate()" *ngIf="isInEditMode">Update Product</button>
+</form>

@@ -1,0 +1,24 @@
+ <div class="col-6">
+        <mat-card>
+            <mat-card-title-group>
+    <mat-card-title>
+        <h2>
+            {{userObj.name}}
+        </h2>
+    </mat-card-title>
+    <img mat-card-sm-image [src]="userObj.image" >
+  </mat-card-title-group>
+            <mat-card-content>
+                <p>
+                   Age : {{userObj.age}}
+                </p>
+                <p>
+                    Email : {{userObj.email}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" routerLink="edit">Edit</button>
+                <button mat-raised-button color="warn" (click)="onRemove(userObj)">Remove</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>

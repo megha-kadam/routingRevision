@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-12 text-align-left mb-4">
+        <button mat-raised-button color="primary" routerLink="/users/addUser">Add User</button>
+    </div>
+    </div>
+
+   <div class="row">
+     <div class="col-4">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let user of users" [routerLink]="user.id">
+                {{user.name}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-8">
+        <router-outlet></router-outlet>
+    </div>
+   
+   
+</div>
