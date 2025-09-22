@@ -52,7 +52,8 @@ export class ProductCardsComponent implements OnInit {
     matDialogRef.afterClosed()
     .subscribe(res => {
       if(res){
-        this.productService.removeProduct(product.pId)
+        this.productService.removeProduct(product.pId);
+        this.router.navigate(['products'])
         this.snackabr.openSnackbar(`Product ${product.productName} removed successfully`)
       }
     })

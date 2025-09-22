@@ -69,7 +69,8 @@ export class UserCardsComponent implements OnInit {
     matdialogRef.afterClosed()
     .subscribe(res => {
       if(res){
-        this.userService.removeUser(user.id)
+        this.userService.removeUser(user.id);
+        this.router.navigate(['users'])
         this.snackbar.openSnackbar(`User ${user.name} removed successfully`)
       }
     })
